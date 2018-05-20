@@ -13,12 +13,12 @@ Using Python code to perform some fund purchasing computation and predictions.
 
 ### Current Progress
 
-[x] Read from txt file
-[x] Enable/Disable Stopless & TargetProfit adjustment
-[x] Accept parameters when executing python script
-[]  Allow users to specify input
-[]  Save result to plain txt file
-[]  Save result to html report
-[]  Visualize results with charts
+- [x] Read from txt file
+- [x] Enable/Disable Stopless & TargetProfit adjustment
+- [x] Accept parameters when executing python script
+- [ ]  Allow users to specify input
+- [ ]  Save result to plain txt file
+- [ ]  Save result to html report
+- [ ]  Visualize results with charts
 
 
