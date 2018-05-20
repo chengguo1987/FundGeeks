@@ -21,7 +21,7 @@ def main():
 	delta = args.increment
 
 	# Load data from file, value started from present day
-	input_file = open('source.txt', 'r')
+	input_file = open(get_input(), 'r')
 
 	# Apply Stoploss/targetProfit or not
 	#option = input('Default 0 | SL & TP 1: ')
@@ -96,4 +96,7 @@ def over_weight(current_value):
 def under_weight(current_value, tp):
 	return current_value*tp
 
+def get_input():
+	file = input('Enter the source file name: ')
+	return file
 main()
