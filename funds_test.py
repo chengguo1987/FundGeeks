@@ -12,6 +12,7 @@ def main():
 	parser.add_argument('-t','--target_profit', type=float, default = 0.0)
 	args = parser.parse_args()
 
+
 	# initial investment
 	#initial_value = float(input('Enter initial value: '))
 	initial_value = args.ini_value
@@ -30,6 +31,9 @@ def main():
 	# Set the target profit
 	#tp = float(input('Enter tp: '))
 	tp = args.target_profit
+
+	# redemption rate
+	rr = 0.005
 
 	# List store original unit price
 	num = list()
@@ -77,7 +81,7 @@ def main():
 					total_inv += over_weight(total_val)
 					total_val -= under_weight(total_val)
 
-	total_yld = total_val - total_inv
+	total_yld = total_val*(1.0-rr) - total_inv
 
 	'''
 	for p in pair:
