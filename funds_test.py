@@ -37,8 +37,7 @@ def main():
 
 	# List store original unit price
 	num = list()
-	# Reverse List
-	num_rev = list()
+
 	# Present Day/Previous Day Ratio
 	ratio = list()
 
@@ -47,33 +46,31 @@ def main():
 		num.append(float(line))
 	
 	# reverse unit price list
-	for v in range(0, len(num)):
-		num_rev.append(num[len(num)-v-1])
-
+	num.reverse()
 
 	# pair = dict()
 	ratio.append(1.0)
-	# pair[num_rev[0]] = 1.0
+	# pair[num[0]] = 1.0
 
 	total_val = initial_value
 	total_inv = initial_value
 	total_yld = 0.0
 
-	for day in range(1, len(num_rev)):
-		ratio.append(num_rev[day]/num_rev[day-1])
-		# pair[num_rev[day]] = ratio[day]
+	for day in range(1, len(num)):
+		ratio.append(num[day]/num[day-1])
+		# pair[num[day]] = ratio[day]
 
 		total_val += delta
 		total_inv += delta
 		total_val *= ratio[day]
-		x = num_rev[day]/num_rev[0]
+		x = num[day]/num[0]
 	
 
 		if option != '0': 
 			if day > 7:
 				
 				if(x>1.05):
-					#print(num_rev[day], total_inv, total_val)
+					#print(num[day], total_inv, total_val)
 					total_inv -= under_weight(total_val, tp)
 					total_val -= under_weight(total_val, tp)
 
@@ -103,4 +100,5 @@ def under_weight(current_value, tp):
 def get_input():
 	file = input('Enter the source file name: ')
 	return file
+
 main()
